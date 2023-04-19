@@ -5,11 +5,13 @@ Authors@R:
     person("First", "Last", , "mario.annau@quantargo.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
 License: file LICENSE
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
 Imports:
+    datasets,
+    graphics,
     shiny
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
