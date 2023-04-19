@@ -2,6 +2,7 @@
 
 export(app_server)
 export(app_ui)
+export(create_histogram)
 importFrom(graphics,hist)
 importFrom(shiny,fluidPage)
 importFrom(shiny,mainPanel)
