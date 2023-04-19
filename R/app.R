@@ -1,13 +1,18 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
-#' Define UI for application that draws a histogram
+#' Creates the User Interface for the "Old Faithful Geyser Data" Application
+#'
+#' This function creates the user interface for the "Old Faithful Geyser Data" application. 
+#' It generates a fluid page that contains a title panel, a sidebar panel with a slider 
+#' input for the number of bins, and a main panel that displays a plot of the 
+#' generated distribution.
+#'
+#' @importFrom shiny fluidPage titlePanel sidebarLayout sidebarPanel sliderInput mainPanel plotOutput
+#' @param input The input variable from the user interface.
+#' @param output The output variable from the user interface.
+#' @rdname app
+#' @examples
+#' \dontrun{
+#'   shinyApp(ui = app_ui, server = app_server)
+#' }
 #' @export
 app_ui <- function() {
   fluidPage(
@@ -33,13 +38,14 @@ app_ui <- function() {
   )
 }
 
-# Define server logic required to draw a histogram
+#' @rdname app
+#' @importFrom shiny renderPlot
+#' @importFrom graphics hist
 #' @export
 app_server <- function(input, output) {
-
     output$distPlot <- renderPlot({
         # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
+        x    <- datasets::faithful[, 2]
         bins <- seq(min(x), max(x), length.out = input$bins + 1)
 
         # draw the histogram with the specified number of bins
