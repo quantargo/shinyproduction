@@ -32,6 +32,8 @@ jobs:
           install.packages("rcmdcheck")
 
       - uses: r-lib/actions/check-r-package@v2
+        with:
+          error-on: '"note"'
       
       - name: Cache packages
         uses: actions/cache@v1
